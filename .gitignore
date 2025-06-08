@@ -1,0 +1,18 @@
+# Python
+*.pyc
+__pycache__/
+.env
+*.env
+venv/
+venv_listener/
+.env.*
+.cache/
+.filtros_por_chat.json
+ligas_api.txt
+ligas_total_api.txt
+# VSCode/IDE
+.vscode/
+.idea/
+# Sistema
+.DS_Store
+Thumbs.db
