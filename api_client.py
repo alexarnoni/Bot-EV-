@@ -39,11 +39,16 @@ class OddsAPI:
 
                 market_name = bet['market'].get('name', '').lower()  # ex: 'spread', 'ml'
                 mercados_permitidos = [
-                    "spread", "ml", "ou", "dnb", "btts", "team_total", "anytime_goalscorer"
+                    "spread", "ml", "ou", "dnb", "btts", "team_total", "anytime_goalscorer",
+                    # Cartões
+                    "bookings", "bookings spread", "bookings totals", "booking", "booking spread", "booking totals",
+                    # Cantos
+                    "corners", "corners spread", "corners totals", "corner", "corner spread", "corner totals"
                 ]
-                if market_name not in mercados_permitidos:
-                    continue
 
+                if market_name.lower() not in mercados_permitidos:
+                    continue
+                
                 # Odds
                 bookmaker = bet.get('bookmaker', '').lower()
                 if bookmaker != "bet365":

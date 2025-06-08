@@ -20,8 +20,21 @@ TRADUCAO_MERCADOS = {
     "team_total": "Total do Time",
     "anytime_goalscorer": "Marcar a Qualquer Momento",
     "team total home": "Total Time da Casa",
-    "team total away": "Total Time Visitante"
+    "team total away": "Total Time Visitante",
+    "bookings": "Cartões",
+    "bookings spread": "Handicap de Cartões",
+    "bookings totals": "Total de Cartões",
+    "booking": "Cartões",
+    "booking spread": "Handicap de Cartões",
+    "booking totals": "Total de Cartões",
+    "corners": "Cantos",
+    "corners spread": "Handicap de Cantos",
+    "corners totals": "Total de Cantos",
+    "corner": "Cantos",
+    "corner spread": "Handicap de Cantos",
+    "corner totals": "Total de Cantos"
 }
+
 TRADUCAO_LADOS = {
     "home": "Casa",
     "away": "Fora",

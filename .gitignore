@@ -16,3 +16,7 @@ ligas_total_api.txt
 # Sistema
 .DS_Store
 Thumbs.db
+
+*.pkl
+__pycache__/
+*.pyc
