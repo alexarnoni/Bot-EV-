@@ -1,1 +1,6 @@
-{"350780046": ["Brazil - Serie A", "Brazil - Serie B", "Brazil - Serie D", "Brazil - Paulista Serie B", "Brazil - Baiano 2", "Brazil - Paranaense 2", "Brazil - Copa Do Nordeste", "Brazil - Catarinense U20", "Brazil - Brasileiro Women", "Brazil - Brasileiro Women A3", "Brazil - Brasileiro Women A2", "Brazil - Goiano 2", "Brazil - Paulista U20", "Brazil - Campeonato Brasileiro"]}
+{
+  "123456789": {
+    "ligas": ["Premier League", "La Liga"],
+    "esportes": ["Football", "Tennis"]
+  }
+}

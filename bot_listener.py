@@ -1,14 +1,19 @@
 import os
+import json
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-import json
 from scanner import scan_apostas
-from dotenv import load_dotenv
 
+load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-if not TELEGRAM_TOKEN:
-    load_dotenv()
-    TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+
+filtros_por_chat = {}
+
+# ----- Função para salvar filtros em JSON -----
+def salvar_filtros():
+    with open("filtros_por_chat.json", "w", encoding="utf-8") as f:
+        json.dump(filtros_por_chat, f, indent=2, ensure_ascii=False)
 
 # Dicionário para salvar o filtro do chat
 filtros_por_chat = {}
@@ -178,56 +183,109 @@ def salvar_filtros():
         json.dump(filtros_por_chat, f)
 
 # ----- HANDLERS DE COMANDO -----
+# ----- Comandos por região -----
 async def set_brasil(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_brasil
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_brasil, "esportes": None}
     salvar_filtros()
-    await update.message.reply_text("Filtro ajustado para: Brasil.")
+    await update.message.reply_text("Filtro ajustado para: 🇧🇷 Brasil.")
 
-async def set_sul(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_america_sul
+async def set_americasul(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_america_sul, "esportes": None}
     salvar_filtros()
     await update.message.reply_text("Filtro ajustado para: América do Sul.")
 
 async def set_europa(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_europa
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_europa, "esportes": None}
     salvar_filtros()
     await update.message.reply_text("Filtro ajustado para: Europa.")
 
 async def set_escandinavo(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_escandinavo
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_escandinavo, "esportes": None}
     salvar_filtros()
     await update.message.reply_text("Filtro ajustado para: Escandinávia.")
 
 async def set_norte_centro(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_norte_centro
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_norte_centro, "esportes": None}
     salvar_filtros()
     await update.message.reply_text("Filtro ajustado para: América do Norte/Centro.")
 
 async def set_asia(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_asia
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_asia, "esportes": None}
     salvar_filtros()
     await update.message.reply_text("Filtro ajustado para: Ásia/Oceania.")
 
 async def set_feminino(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_femininas
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_femininas, "esportes": None}
     salvar_filtros()
     await update.message.reply_text("Filtro ajustado para: Futebol Feminino.")
 
 async def set_internacionais(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = ligas_internacionais
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_internacionais, "esportes": None}
     salvar_filtros()
     await update.message.reply_text("Filtro ajustado para: Copas, Mundial, Amistosos.")
 
 async def set_todos(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    filtros_por_chat[str(update.effective_chat.id)] = None
+    filtros_por_chat[str(update.effective_chat.id)] = {"ligas": None, "esportes": None}
     salvar_filtros()
-    await update.message.reply_text("Filtro removido! Receberá alertas de todas as ligas.")
+    await update.message.reply_text("Filtro removido! Receberá alertas de todas as ligas e esportes.")
 
-# Handler de ajuda (opcional)
+async def ver_filtros(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat_id = str(update.effective_chat.id)
+    filtros = filtros_por_chat.get(chat_id, {})
+    ligas = filtros.get("ligas")
+    esportes = filtros.get("esportes")
+
+    msg = "🎯 <b>Filtros atuais:</b>\n"
+    msg += f"- Ligas: {'Todas' if not ligas else f'{len(ligas)} definidas'}\n"
+    msg += f"- Esportes: {'Todos' if not esportes else ', '.join(esportes)}"
+
+    await update.message.reply_text(msg, parse_mode="HTML")
+
+# ----- Comando para definir esportes -----
+ESPORTES_VALIDOS = {
+    "futebol": "Football",
+    "tenis": "Tennis",
+    "tênis": "Tennis",
+    "basquete": "Basketball",
+    "beisebol": "Baseball",
+    "hockey": "Hockey",
+    "mma": "MMA",
+    "boxe": "Boxing",
+    "volei": "Volleyball",
+    "vôlei": "Volleyball"
+}
+
+async def set_esportes(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat_id = str(update.effective_chat.id)
+    argumentos = context.args
+
+    if not argumentos:
+        await update.message.reply_text("❗ Use: /esportes futebol tenis basquete")
+        return
+
+    esportes = []
+    for arg in argumentos:
+        nome = arg.lower()
+        if nome in ESPORTES_VALIDOS:
+            esportes.append(ESPORTES_VALIDOS[nome])
+
+    if not esportes:
+        await update.message.reply_text("⚠️ Nenhum esporte reconhecido.")
+        return
+
+    if chat_id not in filtros_por_chat or not isinstance(filtros_por_chat[chat_id], dict):
+        filtros_por_chat[chat_id] = {}
+
+    filtros_por_chat[chat_id]["esportes"] = esportes
+    salvar_filtros()
+    esportes_formatados = ", ".join(esportes)
+    await update.message.reply_text(f"✅ Esportes configurados: {esportes_formatados}")
+
+# ----- Ajuda e Scan -----
 async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "Comandos disponíveis:\n\n"
-        "/brasil - Filtro: 🇧🇷 Brasil\n"
+        "/brasil - Filtro: Brasil\n"
         "/sul - Filtro: América do Sul\n"
         "/europa - Filtro: Europa\n"
         "/escandinavo - Filtro: Escandinávia\n"
@@ -236,6 +294,7 @@ async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/feminino - Filtro: Futebol Feminino\n"
         "/internacionais - Filtro: Copas, Mundial, Amistosos\n"
         "/todos - Remove filtro (todas as ligas)\n"
+        "/esportes - Define esportes permitidos (ex: /esportes futebol tenis)"
     )
     await update.message.reply_text(msg)
 
@@ -244,11 +303,11 @@ async def scan_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     result = scan_apostas()
     await update.message.reply_text(f"✅ Scan finalizado!\n{result}")
 
-# Inicialização do app
+# ----- Inicialização do Bot -----
 app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
 app.add_handler(CommandHandler("brasil", set_brasil))
-app.add_handler(CommandHandler("americasul", set_sul))
+app.add_handler(CommandHandler("americasul", set_americasul))
 app.add_handler(CommandHandler("europa", set_europa))
 app.add_handler(CommandHandler("escandinavo", set_escandinavo))
 app.add_handler(CommandHandler("americanortecentro", set_norte_centro))
@@ -256,8 +315,10 @@ app.add_handler(CommandHandler("asia", set_asia))
 app.add_handler(CommandHandler("feminino", set_feminino))
 app.add_handler(CommandHandler("internacionais", set_internacionais))
 app.add_handler(CommandHandler("todos", set_todos))
-app.add_handler(CommandHandler("ajuda", ajuda))  # opcional
+app.add_handler(CommandHandler("esportes", set_esportes))
+app.add_handler(CommandHandler("ajuda", ajuda))
 app.add_handler(CommandHandler("scan", scan_handler))
+app.add_handler(CommandHandler("filtros", ver_filtros))
 
 if __name__ == "__main__":
     app.run_polling()

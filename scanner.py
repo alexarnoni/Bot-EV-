@@ -3,7 +3,7 @@ from api_client import OddsAPI
 from cache import carregar_cache, salvar_cache, gerar_hash_alerta
 from bot_ev import enviar_alerta
 from bot_core import definir_stake
-from utils import salvar_ligas_api_completo
+from utils import salvar_ligas_api_completo, salvar_ligas_encontradas 
 import os
 import json
 
@@ -24,9 +24,10 @@ def scan_apostas():
 
     chat_id = str(os.getenv("TELEGRAM_CHAT_ID"))
     filtros = carregar_filtros()
-    ligas_permitidas = filtros.get(chat_id, None)
+    ligas_permitidas = filtros.get(chat_id, {}).get("ligas", None)
+    esportes_permitidos = filtros.get(chat_id, {}).get("esportes", None)
 
-    eventos = api.get_eventos_futebol()
+    eventos = api.get_eventos_geral()
 
     if not eventos:
         logging.warning("Nenhum evento encontrado.")
@@ -36,7 +37,9 @@ def scan_apostas():
 
     for evento in eventos:
         try:
-            if ligas_permitidas and evento.get('league') not in ligas_permitidas:
+            if esportes_permitidos and evento.get("sport") not in esportes_permitidos:
+                continue
+            if ligas_permitidas and evento.get("league") not in ligas_permitidas:
                 continue
 
             odd_bet365 = evento['bet365_odds']
@@ -77,7 +80,9 @@ def scan_apostas():
             continue
 
     salvar_cache(cache)
-    salvar_ligas_api_completo(eventos)
+    salvar_ligas_api_completo([e for e in eventos if gerar_hash_alerta(e) in cache])  # só eventos alertados
+    salvar_ligas_encontradas(eventos)  # todos os eventos que vieram da API
+
     logging.info(f"🏁 Busca finalizada. {novas_apostas} alertas enviados.")
 
     return f"{novas_apostas} alertas enviados." if novas_apostas else "Nenhum alerta novo."

@@ -28,9 +28,10 @@ def main():
     # Carregar filtro do chat
     chat_id = str(os.getenv("TELEGRAM_CHAT_ID"))
     filtros = carregar_filtros()
-    ligas_permitidas = filtros.get(chat_id, None)
+    ligas_permitidas = filtros.get(chat_id, {}).get("ligas", None)
+    esportes_permitidos = filtros.get(chat_id, {}).get("esportes", None)
 
-    eventos = api.get_eventos_futebol()
+    eventos = api.get_eventos_geral()
     
     if not eventos:
         logging.warning("Nenhum evento encontrado.")
@@ -41,7 +42,9 @@ def main():
     for evento in eventos:
         try:
             # Filtro de Liga Dinâmico
-            if ligas_permitidas and evento.get('league') not in ligas_permitidas:
+            if esportes_permitidos and evento.get("sport") not in esportes_permitidos:
+                continue
+            if ligas_permitidas and evento.get("league") not in ligas_permitidas:
                 continue
 
             # Checagens de odds válidas
