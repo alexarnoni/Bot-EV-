@@ -28,4 +28,5 @@ else
     echo "❌ Não está rodando"
 fi
 
-
+echo ""
+echo "📊 Status verificado com sucesso."
