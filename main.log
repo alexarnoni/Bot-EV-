@@ -1,0 +1,212 @@
+2025-06-11 00:31:19,548 | INFO | 🔍 Iniciando busca por apostas com EV+ ...
+2025-06-11 00:31:21,205 | INFO | ❌ Descartado Fortaleza vs Santos [Corners Totals] | EV: 3.02% | Stake: 0.00u
+2025-06-11 00:31:21,967 | INFO | ✅ ALERTA ENVIADO: Atletico Mineiro vs Internacional [Corners Totals] | EV: 5.86% | Stake: 1.00u
+2025-06-11 00:31:21,967 | INFO | ❌ Descartado Atletico Mineiro vs Internacional [Corners Totals HT] | EV: 2.05% | Stake: 0.00u
+2025-06-11 00:31:22,709 | INFO | ✅ ALERTA ENVIADO: Atletico Mineiro vs Internacional [Corners Spread] | EV: 6.56% | Stake: 1.00u
+2025-06-11 00:31:22,709 | INFO | ❌ Descartado Sao Paulo vs Vasco da Gama [Corners Totals] | EV: 0.96% | Stake: 0.00u
+2025-06-11 00:31:22,709 | INFO | ❌ Descartado Sao Paulo vs Vasco da Gama [Corners Spread] | EV: 3.86% | Stake: 0.00u
+2025-06-11 00:31:22,709 | INFO | ❌ Descartado Gremio vs Corinthians [ML] | EV: 2.76% | Stake: 0.00u
+2025-06-11 00:31:22,709 | INFO | ❌ Descartado Bragantino vs Bahia [ML] | EV: 0.54% | Stake: 0.00u
+2025-06-11 00:31:22,710 | INFO | ❌ Descartado Vitoria vs Cruzeiro [Corners Totals HT] | EV: 1.17% | Stake: 0.00u
+2025-06-11 00:31:22,710 | INFO | ❌ Descartado Gremio vs Corinthians [Corners Spread] | EV: 3.21% | Stake: 0.00u
+2025-06-11 00:31:22,710 | INFO | ❌ Descartado Fortaleza vs Santos [Corners Spread] | EV: 1.50% | Stake: 0.00u
+2025-06-11 00:31:22,710 | INFO | ❌ Descartado Gremio Novorizontino vs Cuiaba [ML] | EV: 0.47% | Stake: 0.00u
+2025-06-11 00:31:22,710 | INFO | ❌ Descartado Chapecoense vs Ferroviaria SP [Spread HT] | EV: 1.24% | Stake: 0.00u
+2025-06-11 00:31:22,710 | INFO | ❌ Descartado Fortaleza vs Santos [ML] | EV: 4.49% | Stake: 0.00u
+2025-06-11 00:31:22,710 | INFO | ❌ Descartado Atletico Mineiro vs Internacional [ML] | EV: 0.66% | Stake: 0.00u
+2025-06-11 00:31:22,711 | INFO | 🏁 Busca finalizada. 2 alertas enviados.
+2025-06-11 00:31:22,712 | INFO | ⏱️ main.py executado em 2025-06-11T03:31:22.712772+00:00
+2025-06-11 00:39:52,525 | INFO | 🔍 Iniciando busca por apostas com EV+ ...
+2025-06-11 00:40:05,363 | INFO | 🔍 Iniciando busca por apostas com EV+ ...
+2025-06-11 00:45:19,489 | INFO | 🔍 Iniciando busca por apostas com EV+ ...
+2025-06-11 00:45:20,886 | INFO | ❌ Descartado Metros de Santiago vs Leones De Santo Domingo [Totals HT] | EV: 1.30% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Shanghai STV vs Liaoning [Spread HT] | EV: 3.62% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Shanghai STV vs Liaoning [Totals HT] | EV: 0.16% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Shanghai STV vs Liaoning [Spread] | EV: 3.05% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Shanghai STV vs Liaoning [Totals] | EV: 1.81% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Julie Belgraver vs Yasmine Kabbaj [ML] | EV: 3.15% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Baltimore Orioles vs Detroit Tigers [Player Props - Cedric Mullins (Total Bases)] | EV: 2.55% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado MC Oran vs MC El Bayadh [Spread] | EV: 1.45% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Seattle Storm vs Minnesota Lynx [ML] | EV: 4.15% | Stake: 0.00u
+2025-06-11 00:45:20,887 | INFO | ❌ Descartado Philadelphia Phillies vs Chicago Cubs [Spread] | EV: 0.14% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado Shenzhen Peng City vs Shanghai Shenhua [Spread] | EV: 0.61% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado SJK vs KPV [Spread HT] | EV: 2.09% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado Estudiantes de Merida vs Urena [ML] | EV: 1.54% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado Club Antonin Sportif vs Homenetmen [Spread] | EV: 0.50% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado Fagiano Okayama vs Giravanz Kitakyushu [ML] | EV: 1.07% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | 🔁 Alerta já enviado para Denisa Hindova vs Laura Svatikova [ML]
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado Iberian Soul vs HEROIC Academy [Map Handicap] | EV: 3.46% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado Kashima Antlers vs Thespa Gunma [Spread HT] | EV: 2.84% | Stake: 0.00u
+2025-06-11 00:45:20,888 | INFO | ❌ Descartado Broadmeadow Magic vs Cooks Hill United [Spread HT] | EV: 1.88% | Stake: 0.00u
+2025-06-11 00:45:20,889 | INFO | ❌ Descartado Eastern Suburbs vs Moreton City Excelsior [Team Total Home] | EV: 3.25% | Stake: 0.00u
+2025-06-11 00:45:20,889 | INFO | ❌ Descartado Colorado Rockies vs San Francisco Giants [Team Total Home] | EV: 0.72% | Stake: 0.00u
+2025-06-11 00:45:20,889 | INFO | ❌ Descartado HJK Klubi 04 vs IFK Mariehamn [Spread HT] | EV: 0.82% | Stake: 0.00u
+2025-06-11 00:45:20,889 | INFO | ❌ Descartado Cerezo Osaka vs Arterivo Wakayama [Totals HT] | EV: 0.28% | Stake: 0.00u
+2025-06-11 00:45:20,889 | INFO | 🔁 Alerta já enviado para Daniel Michalski vs Henrique Rocha [ML]
+2025-06-11 00:45:20,889 | INFO | ❌ Descartado Ulaanbaatar vs Deren [Totals] | EV: 2.44% | Stake: 0.00u
+2025-06-11 00:45:20,889 | INFO | ❌ Descartado Cerezo Osaka vs Arterivo Wakayama [Spread HT] | EV: 3.67% | Stake: 0.00u
+2025-06-11 00:45:20,890 | INFO | ❌ Descartado China vs Japan [Spread] | EV: 0.37% | Stake: 0.00u
+2025-06-11 00:45:20,890 | INFO | ❌ Descartado Club Antonin Sportif vs Homenetmen [ML] | EV: 2.47% | Stake: 0.00u
+2025-06-11 00:45:20,890 | INFO | ❌ Descartado Stabaek vs Valerenga [Totals HT] | EV: 0.71% | Stake: 0.00u
+2025-06-11 00:45:20,890 | INFO | ❌ Descartado Matej Dodig vs Jaime Faria [ML] | EV: 1.03% | Stake: 0.00u
+2025-06-11 00:45:20,890 | INFO | ❌ Descartado Excursionistas vs Liniers [Team Total Away] | EV: 0.36% | Stake: 0.00u
+2025-06-11 00:45:20,890 | INFO | ❌ Descartado Excursionistas vs Liniers [Spread HT] | EV: 4.26% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Excursionistas vs Liniers [Spread] | EV: 3.86% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Excursionistas vs Liniers [ML] | EV: 0.60% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Portland Timbers II vs Ventura County [Spread] | EV: 1.92% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Portland Timbers II vs Ventura County [Spread HT] | EV: 2.97% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Alianza FC vs Envigado [ML] | EV: 1.84% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Shandong Huangming vs Zhejiang Hangzhou Xizi [Spread HT] | EV: 0.83% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Boston Red Sox vs Tampa Bay Rays [Player Props - Zack Littell (Hits Allowed)] | EV: 1.96% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado JEF United Chiba vs Roasso Kumamoto [Totals HT] | EV: 0.29% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Fortaleza vs Santos [Corners Totals] | EV: 3.02% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado Portland Timbers II vs Ventura County [Totals] | EV: 0.82% | Stake: 0.00u
+2025-06-11 00:45:20,891 | INFO | ❌ Descartado OG vs Secret [Moneyline] | EV: 1.72% | Stake: 0.00u
+2025-06-11 00:45:20,892 | INFO | ❌ Descartado Robina City vs North Lakes United [Spread HT] | EV: 3.09% | Stake: 0.00u
+2025-06-11 00:45:20,892 | INFO | ❌ Descartado Real Madrid vs Al-Hilal (KSA) [Spread] | EV: 3.07% | Stake: 0.00u
+2025-06-11 00:45:20,892 | INFO | ❌ Descartado Baltimore Orioles vs Detroit Tigers [Player Props - Adley Rutschman (Total Bases)] | EV: 2.09% | Stake: 0.00u
+2025-06-11 00:45:20,892 | INFO | 🔁 Alerta já enviado para Robina City vs North Lakes United [Totals HT]
+2025-06-11 00:45:20,892 | INFO | 🔁 Alerta já enviado para Nicolas Villalon Valdes vs Nicolas Bruna [ML]
+2025-06-11 00:45:20,892 | INFO | 🔁 Alerta já enviado para Alejandro Jacome Jaramillo vs Eli Stephenson [ML]
+2025-06-11 00:45:20,893 | INFO | ❌ Descartado Felix Corwin vs Denis Klok [ML] | EV: 2.99% | Stake: 0.00u
+2025-06-11 00:45:20,893 | INFO | 🔁 Alerta já enviado para Lorenzo Giustino vs Tristan Lamasine [ML]
+2025-06-11 00:45:20,893 | INFO | ❌ Descartado Baltimore Orioles vs Detroit Tigers [Player Props - Jackson Holliday (Total Bases)] | EV: 1.21% | Stake: 0.00u
+2025-06-11 00:45:20,893 | INFO | ❌ Descartado Baltimore Orioles vs Detroit Tigers [Player Props - Coby Mayo (Total Bases)] | EV: 1.89% | Stake: 0.00u
+2025-06-11 00:45:20,893 | INFO | ❌ Descartado Baltimore Orioles vs Detroit Tigers [Player Props - Colton Cowser (Total Bases)] | EV: 2.19% | Stake: 0.00u
+2025-06-11 00:45:20,893 | INFO | ❌ Descartado Baltimore Orioles vs Detroit Tigers [Player Props - Jordan Westburg (Total Bases)] | EV: 4.30% | Stake: 0.00u
+2025-06-11 00:45:20,894 | INFO | ❌ Descartado Tokyo Verdy vs Tochigi [ML] | EV: 4.25% | Stake: 0.00u
+2025-06-11 00:45:20,894 | INFO | ❌ Descartado Avispa Fukuoka vs Okinawa SV [Spread HT] | EV: 0.71% | Stake: 0.00u
+2025-06-11 00:45:20,894 | INFO | ❌ Descartado JPS vs Vaajakoski [Totals] | EV: 0.34% | Stake: 0.00u
+2025-06-11 00:45:20,894 | INFO | ❌ Descartado Spokane Velocity vs Charlotte Independence [Spread HT] | EV: 2.50% | Stake: 0.00u
+2025-06-11 00:45:20,894 | INFO | 🔁 Alerta já enviado para Spokane Velocity vs Charlotte Independence [ML]
+2025-06-11 00:45:20,895 | INFO | ❌ Descartado Victoria Allen vs Hiroko Kuwata [ML] | EV: 3.84% | Stake: 0.00u
+2025-06-11 00:45:20,895 | INFO | ❌ Descartado Imbabura vs 9 de Octubre [Totals HT] | EV: 2.26% | Stake: 0.00u
+2025-06-11 00:45:20,895 | INFO | ❌ Descartado Imbabura vs 9 de Octubre [Totals] | EV: 2.20% | Stake: 0.00u
+2025-06-11 00:45:20,895 | INFO | ❌ Descartado Slovenia vs Montenegro [Spread] | EV: 3.21% | Stake: 0.00u
+2025-06-11 00:45:20,895 | INFO | ❌ Descartado Aleksander Chayka vs Oskar Grzegorzewski [ML] | EV: 2.81% | Stake: 0.00u
+2025-06-11 00:45:20,895 | INFO | ❌ Descartado Nicolas Ian Kotzen vs Duncan Chan [ML] | EV: 1.55% | Stake: 0.00u
+2025-06-11 00:45:20,895 | INFO | ❌ Descartado Admir Kalender vs Giammarco Gandolfi [ML] | EV: 0.88% | Stake: 0.00u
+2025-06-11 00:45:20,896 | INFO | 🔁 Alerta já enviado para Botafogo vs Tijuca Tenis Clube [Spread]
+2025-06-11 00:45:20,896 | INFO | ❌ Descartado Haiti vs Saudi Arabia [ML] | EV: 4.26% | Stake: 0.00u
+2025-06-11 00:45:20,896 | INFO | ❌ Descartado Loic Namigandet Tenguere vs Mikael Arseneault [ML] | EV: 1.28% | Stake: 0.00u
+2025-06-11 00:45:20,896 | INFO | ❌ Descartado Zuzanna Pawlikowska vs Rachel Gailis [ML] | EV: 2.86% | Stake: 0.00u
+2025-06-11 00:45:20,896 | INFO | ❌ Descartado Minnesota United II vs Houston Dynamo II [Totals HT] | EV: 0.79% | Stake: 0.00u
+2025-06-11 00:45:20,897 | INFO | ❌ Descartado Minnesota United II vs Houston Dynamo II [Spread HT] | EV: 3.30% | Stake: 0.00u
+2025-06-11 00:45:20,897 | INFO | ❌ Descartado Minnesota United II vs Houston Dynamo II [Totals] | EV: 2.29% | Stake: 0.00u
+2025-06-11 00:45:20,897 | INFO | 🔁 Alerta já enviado para Minnesota United II vs Houston Dynamo II [Spread]
+2025-06-11 00:45:20,897 | INFO | ❌ Descartado Minnesota United II vs Houston Dynamo II [ML] | EV: 1.41% | Stake: 0.00u
+2025-06-11 00:45:20,897 | INFO | ❌ Descartado Alejandro Turriziani Alvarez vs Ignasi Forcano [ML] | EV: 1.44% | Stake: 0.00u
+2025-06-11 00:45:20,897 | INFO | ❌ Descartado Utah Royals vs NJ/NY Gotham FC [Totals HT] | EV: 1.33% | Stake: 0.00u
+2025-06-11 00:45:20,898 | INFO | ❌ Descartado Next Level vs 4Pirates [Map Handicap] | EV: 0.88% | Stake: 0.00u
+2025-06-11 00:45:20,898 | INFO | ❌ Descartado Deportivo Pasto vs Union Magdalena [ML] | EV: 3.74% | Stake: 0.00u
+2025-06-11 00:45:20,898 | INFO | ❌ Descartado Gwangju FC vs FC Seoul [ML] | EV: 1.97% | Stake: 0.00u
+2025-06-11 00:45:20,898 | INFO | ❌ Descartado Atletico Mineiro vs Internacional [Corners Totals HT] | EV: 2.05% | Stake: 0.00u
+2025-06-11 00:45:20,898 | INFO | 🔁 Alerta já enviado para Atletico Mineiro vs Internacional [Corners Spread]
+2025-06-11 00:45:20,898 | INFO | 🔁 Alerta já enviado para Atletico Mineiro vs Internacional [Corners Totals]
+2025-06-11 00:45:20,898 | INFO | ❌ Descartado Sao Paulo vs Vasco da Gama [Corners Spread] | EV: 3.86% | Stake: 0.00u
+2025-06-11 00:45:20,898 | INFO | ❌ Descartado Sao Paulo vs Vasco da Gama [Corners Totals] | EV: 0.96% | Stake: 0.00u
+2025-06-11 00:45:20,898 | INFO | ❌ Descartado Bayern Munich vs Auckland City [Totals HT] | EV: 1.88% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Bayern Munich vs Auckland City [Totals] | EV: 4.03% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Niklas Waldner vs Karl Poling [ML] | EV: 0.82% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Lavinia Tanasie vs Alena Kovackova [ML] | EV: 0.22% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Deportivo Maipu vs Racing de Cordoba [ML] | EV: 1.56% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Alexis Gautier vs Luca Pow [ML] | EV: 2.64% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Enola Chiesa vs Aubane Droguet [ML] | EV: 3.44% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Newcastle Olympic vs New Lambton [Totals] | EV: 3.99% | Stake: 0.00u
+2025-06-11 00:45:20,900 | INFO | ❌ Descartado Newcastle Olympic vs New Lambton [Spread] | EV: 4.12% | Stake: 0.00u
+2025-06-11 00:45:20,901 | INFO | ❌ Descartado Vlada Mincheva vs Marine Szostak [ML] | EV: 4.81% | Stake: 0.00u
+2025-06-11 00:45:20,901 | INFO | 🔁 Alerta já enviado para Olga Helmi vs Lea Tholey [ML]
+2025-06-11 00:45:20,901 | INFO | ❌ Descartado Zhejiang Lions vs Sporting Al Riyadi Beirut [Spread] | EV: 1.09% | Stake: 0.00u
+2025-06-11 00:45:20,901 | INFO | ❌ Descartado Valeriia Krokhotina vs Julia Stamatova [ML] | EV: 1.33% | Stake: 0.00u
+2025-06-11 00:45:20,901 | INFO | ❌ Descartado Hapoel Eilat vs Maccabi Rishon Lezion [Totals] | EV: 2.75% | Stake: 0.00u
+2025-06-11 00:45:20,901 | INFO | ❌ Descartado Indiana Pacers vs Oklahoma City Thunder [Player Props - Jalen Williams (Points)] | EV: 0.20% | Stake: 0.00u
+2025-06-11 00:45:20,902 | INFO | 🔁 Alerta já enviado para Breidablik vs HK Kopavogur [Spread]
+2025-06-11 00:45:20,902 | INFO | 🔁 Alerta já enviado para New York City vs Atlanta United [Corners Spread]
+2025-06-11 00:45:20,902 | INFO | ❌ Descartado Malwina Rowinska vs Gabia Paskauskas [ML] | EV: 3.33% | Stake: 0.00u
+2025-06-11 00:45:20,902 | INFO | ❌ Descartado Gremio vs Corinthians [ML] | EV: 2.76% | Stake: 0.00u
+2025-06-11 00:45:20,902 | INFO | ❌ Descartado BK ROG (Kills) vs Fajnie Miec Sklad (Kills) [2nd Map Handicap] | EV: 3.94% | Stake: 0.00u
+2025-06-11 00:45:20,902 | INFO | ❌ Descartado BK ROG (Kills) vs Fajnie Miec Sklad (Kills) [3rd Map Handicap] | EV: 3.94% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado BK ROG (Kills) vs Fajnie Miec Sklad (Kills) [1st Map Handicap] | EV: 3.94% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Breidablik vs HK Kopavogur [Totals] | EV: 4.98% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Bernarda Pera vs Elisabetta Cocciaretto [ML] | EV: 1.37% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Lilian Poling vs Alice Battesti [ML] | EV: 3.16% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Ferro vs Atletico Boca Juniors [ML] | EV: 0.27% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | 🔁 Alerta já enviado para BC Zalgiris Kaunas vs Rytas Vilnius [Spread]
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Tanisha Kashyap vs Elena Grekul [ML] | EV: 2.01% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Veronika Kudermetova vs Greet Minnen [ML] | EV: 1.36% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | 🔁 Alerta já enviado para Thor/KA vs FH Hafnarfjordur [Spread HT]
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Bragantino vs Bahia [ML] | EV: 0.54% | Stake: 0.00u
+2025-06-11 00:45:20,903 | INFO | 🔁 Alerta já enviado para Thor/KA vs FH Hafnarfjordur [Spread]
+2025-06-11 00:45:20,903 | INFO | ❌ Descartado Thor/KA vs FH Hafnarfjordur [ML] | EV: 1.01% | Stake: 0.00u
+2025-06-11 00:45:20,905 | INFO | ❌ Descartado Vitoria vs Cruzeiro [Corners Totals HT] | EV: 1.17% | Stake: 0.00u
+2025-06-11 00:45:20,905 | INFO | ❌ Descartado Gremio vs Corinthians [Corners Spread] | EV: 3.21% | Stake: 0.00u
+2025-06-11 00:45:20,905 | INFO | ❌ Descartado Fortaleza vs Santos [Corners Spread] | EV: 1.50% | Stake: 0.00u
+2025-06-11 00:45:20,905 | INFO | ❌ Descartado Maximilian Homberg vs Francisco Rocha [ML] | EV: 3.84% | Stake: 0.00u
+2025-06-11 00:45:20,906 | INFO | ❌ Descartado Dimitar Kuzmanov vs Arthur Cazaux [ML] | EV: 2.41% | Stake: 0.00u
+2025-06-11 00:45:20,906 | INFO | 🔁 Alerta já enviado para Real Oviedo vs Almeria [Corners Spread]
+2025-06-11 00:45:20,906 | INFO | ❌ Descartado Vissel Kobe vs Kochi United [ML] | EV: 1.12% | Stake: 0.00u
+2025-06-11 00:45:20,906 | INFO | ❌ Descartado Marta Soriano Santiago vs Sofia Rocchetti [ML] | EV: 1.33% | Stake: 0.00u
+2025-06-11 00:45:20,906 | INFO | ❌ Descartado Newells Old Boys vs San Lorenzo [Totals] | EV: 0.52% | Stake: 0.00u
+2025-06-11 00:45:20,906 | INFO | ❌ Descartado Minnesota United vs San Diego FC [ML] | EV: 2.43% | Stake: 0.00u
+2025-06-11 00:45:20,907 | INFO | ❌ Descartado Internacional de Palmira vs Jaguares de Cordoba [Totals HT] | EV: 0.70% | Stake: 0.00u
+2025-06-11 00:45:20,907 | INFO | ❌ Descartado Bucaramanga vs Atletico Nacional [Spread] | EV: 0.57% | Stake: 0.00u
+2025-06-11 00:45:20,907 | INFO | ❌ Descartado Bucaramanga vs Atletico Nacional [Totals] | EV: 2.78% | Stake: 0.00u
+2025-06-11 00:45:20,907 | INFO | ❌ Descartado Bucaramanga vs Atletico Nacional [Totals HT] | EV: 4.48% | Stake: 0.00u
+2025-06-11 00:45:20,907 | INFO | ❌ Descartado Margaux Rouvroy vs Irina Maria Bara [ML] | EV: 4.17% | Stake: 0.00u
+2025-06-11 00:45:20,907 | INFO | ❌ Descartado Indiana Pacers vs Oklahoma City Thunder [Player Props - Pascal Siakam (Rebounds)] | EV: 0.68% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Shu Muto vs Grigoriy Lomakin [ML] | EV: 4.81% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Nigina Abduraimova vs Daria Khomutsianskaya [ML] | EV: 1.12% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Albirex Niigata vs Fukuyama City [Spread HT] | EV: 1.98% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Eastern Suburbs vs Moreton City Excelsior [Corners Totals HT] | EV: 4.51% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Chicago Fire vs Nashville SC [ML] | EV: 2.12% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Mirandes vs Racing Santander [Corners Spread] | EV: 1.11% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Mirandes vs Racing Santander [Corners Totals] | EV: 1.91% | Stake: 0.00u
+2025-06-11 00:45:20,908 | INFO | 🔁 Alerta já enviado para ASO Chlef vs JS Saoura [Corners Totals]
+2025-06-11 00:45:20,908 | INFO | ❌ Descartado Cruzeiro vs Gremio [Totals] | EV: 0.86% | Stake: 0.00u
+2025-06-11 00:45:20,909 | INFO | ❌ Descartado Cruzeiro vs Gremio [Totals HT] | EV: 0.25% | Stake: 0.00u
+2025-06-11 00:45:20,909 | INFO | ❌ Descartado Bryne vs Honefoss [Spread] | EV: 2.85% | Stake: 0.00u
+2025-06-11 00:45:20,909 | INFO | ❌ Descartado Gremio Novorizontino vs Cuiaba [ML] | EV: 0.47% | Stake: 0.00u
+2025-06-11 00:45:20,909 | INFO | ❌ Descartado Costa Rica vs Suriname [ML] | EV: 0.52% | Stake: 0.00u
+2025-06-11 00:45:20,909 | INFO | ❌ Descartado St Patrick´s Athletic vs Drogheda United [ML] | EV: 1.06% | Stake: 0.00u
+2025-06-11 00:45:20,909 | INFO | ❌ Descartado Metros de Santiago vs Leones De Santo Domingo [Spread] | EV: 1.86% | Stake: 0.00u
+2025-06-11 00:45:20,909 | INFO | 🔁 Alerta já enviado para Jazz vs KuPS [Corners Totals HT]
+2025-06-11 00:45:20,909 | INFO | 🔁 Alerta já enviado para Mikkelin Palloilijat vs HJK Helsinki [Corners Totals HT]
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Patronato Parana vs Los Andes [Team Total Away] | EV: 0.25% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Defensores Unidos vs Club Atletico Mitre [Spread HT] | EV: 0.56% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Sunshine Coast Wanderers vs Brisbane Roar II [Corners Totals] | EV: 3.72% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | 🔁 Alerta já enviado para Sporting Cristal vs Deportivo Garcilaso [ML]
+2025-06-11 00:45:20,910 | INFO | 🔁 Alerta já enviado para Patronato Parana vs Los Andes [ML]
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Guemes vs Ferro Carril Oeste [ML] | EV: 2.37% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado CGN vs Los Heretics [Total Maps] | EV: 0.83% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | 🔁 Alerta já enviado para Sporting Kansas City vs FC Dallas [ML]
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Chapecoense vs Ferroviaria SP [Spread HT] | EV: 1.24% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Real Madrid vs Al-Hilal (KSA) [Totals HT] | EV: 3.90% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Lucca Liu vs Oliver Clark Anderson [ML] | EV: 0.63% | Stake: 0.00u
+2025-06-11 00:45:20,910 | INFO | 🔁 Alerta já enviado para Real Madrid vs Al-Hilal (KSA) [Totals]
+2025-06-11 00:45:20,910 | INFO | ❌ Descartado Delfin vs Mushuc Runa [ML] | EV: 4.01% | Stake: 0.00u
+2025-06-11 00:45:20,911 | INFO | 🔁 Alerta já enviado para Karmine Corp Blue vs Zero Tenacity [Total Maps]
+2025-06-11 00:45:20,911 | INFO | 🔁 Alerta já enviado para Karmine Corp Blue vs Zero Tenacity [Map Handicap]
+2025-06-11 00:45:20,911 | INFO | ❌ Descartado Gen.G vs Hanwha Life [Map Handicap] | EV: 0.90% | Stake: 0.00u
+2025-06-11 00:45:20,911 | INFO | ❌ Descartado GIANTX Pride vs Gentle Mates [Total Maps] | EV: 0.83% | Stake: 0.00u
+2025-06-11 00:45:20,911 | INFO | ❌ Descartado NORD vs Los Ratones [Total Maps] | EV: 1.59% | Stake: 0.00u
+2025-06-11 00:45:20,911 | INFO | ❌ Descartado Canada vs Honduras [ML] | EV: 0.60% | Stake: 0.00u
+2025-06-11 00:45:20,912 | INFO | 🔁 Alerta já enviado para Temperley vs Colon de Santa Fe [ML]
+2025-06-11 00:45:20,912 | INFO | ❌ Descartado Colorado Rapids vs Orlando City [ML] | EV: 0.16% | Stake: 0.00u
+2025-06-11 00:45:20,912 | INFO | ❌ Descartado Fortaleza vs Santos [ML] | EV: 4.49% | Stake: 0.00u
+2025-06-11 00:45:20,912 | INFO | ❌ Descartado Estudiantes Rio Cuarto vs Gimnasia Mendoza [ML] | EV: 4.79% | Stake: 0.00u
+2025-06-11 00:45:20,912 | INFO | ❌ Descartado Real Madrid vs Al-Hilal (KSA) [Team Total Home] | EV: 2.29% | Stake: 0.00u
+2025-06-11 00:45:20,912 | INFO | 🔁 Alerta já enviado para Defensores de Belgrano vs Gimnasia Jujuy [ML]
+2025-06-11 00:45:20,912 | INFO | ❌ Descartado Talleres de Remedios vs Central Norte Salta [ML] | EV: 4.74% | Stake: 0.00u
+2025-06-11 00:45:20,912 | INFO | 🔁 Alerta já enviado para ELEVATE vs FURIA Academy [Moneyline]
+2025-06-11 00:45:20,912 | INFO | ❌ Descartado Atletico Mineiro vs Internacional [ML] | EV: 0.66% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado PEEK vs Corinthians [Moneyline] | EV: 1.96% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado Prestige vs GenOne [Map Handicap] | EV: 4.73% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado Prestige vs GenOne [Moneyline] | EV: 2.29% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado Fluminense vs Borussia Dortmund [ML] | EV: 3.76% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado Osters vs Sirius [ML] | EV: 2.41% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado Osters vs Sirius [Team Total Home] | EV: 0.29% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado Bodo Glimt vs Brann [ML] | EV: 3.35% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado Indianapolis Colts vs Miami Dolphins [Totals] | EV: 0.16% | Stake: 0.00u
+2025-06-11 00:45:20,913 | INFO | ❌ Descartado AIK vs IFK Goteborg [ML] | EV: 1.86% | Stake: 0.00u
+2025-06-11 00:45:20,914 | INFO | 🏁 Busca finalizada. 0 alertas enviados.
+2025-06-11 00:45:20,914 | INFO | ⏱️ main.py executado em 2025-06-11T03:45:20.914563+00:00

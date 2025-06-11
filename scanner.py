@@ -22,9 +22,7 @@ def carregar_filtros():
 def scan_apostas(chat_id=None):
     logging.info("🔍 Iniciando busca por apostas com EV+ ...")
     api = OddsAPI()
-    cache = carregar_cache()
-    novas_apostas = 0
-
+    
     if chat_id is None:
         chat_id = os.getenv("TELEGRAM_CHAT_ID")
     if chat_id is None:
@@ -32,9 +30,8 @@ def scan_apostas(chat_id=None):
         return "Erro: chat_id ausente."
 
     chat_id = str(chat_id)
-
-    if chat_id not in cache:
-        cache[chat_id] = set()
+    cache = carregar_cache(chat_id)
+    novas_apostas = 0
 
     filtros = carregar_filtros()
     ligas_permitidas = filtros.get(chat_id, {}).get("ligas", None)
@@ -65,7 +62,7 @@ def scan_apostas(chat_id=None):
                 continue
 
             alerta_hash = gerar_hash_alerta(evento)
-            if not alerta_hash or alerta_hash in cache[chat_id]:
+            if not alerta_hash or alerta_hash in cache:
                 continue
 
             alerta_extra = ""
@@ -73,14 +70,14 @@ def scan_apostas(chat_id=None):
                 alerta_extra = "\n⚠️ <b>Stake sugerida acima de 2u! Reveja o risco antes de apostar.</b>"
 
             enviar_alerta(chat_id, evento, ev, stake, stake_sugerida, alerta_extra=alerta_extra)
-            cache[chat_id].add(alerta_hash)
+            cache.add(alerta_hash)
             novas_apostas += 1
             eventos_alertados.append(evento)
         except Exception as e:
             logging.error(f"Erro ao processar evento: {e}")
             continue
 
-    salvar_cache(cache)
+    salvar_cache(cache, chat_id)
     salvar_ligas_api_completo(eventos_alertados)
     salvar_ligas_encontradas(eventos)
 
@@ -89,4 +86,5 @@ def scan_apostas(chat_id=None):
 
 # --- Execução direta pelo terminal:
 if __name__ == "__main__":
-    print(scan_apostas())
+    chat_id_env = os.getenv("TELEGRAM_CHAT_ID")
+    print(scan_apostas(chat_id=chat_id_env))

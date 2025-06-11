@@ -309,7 +309,8 @@ async def ajuda(update, context):
 # ----- /scan manual -----
 async def scan_handler(update, context):
     await update.message.reply_text("🔎 Iniciando scan manual...")
-    resultado = scan_apostas()
+    chat_id = str(update.effective_chat.id)
+    resultado = scan_apostas(chat_id)
     await update.message.reply_text(f"✅ Scan finalizado!\n{resultado}")
 
 # ----- Inicializar bot -----

@@ -1,4 +1,6 @@
 import logging
+import sys
+import io
 from api_client import OddsAPI
 from cache import carregar_cache, salvar_cache, gerar_hash_alerta
 from bot_ev import enviar_alerta
@@ -10,6 +12,9 @@ import schedule
 import time
 from datetime import datetime, timezone
 
+# Corrige problemas de emoji no terminal Windows
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 print("⚙️ main.py iniciado.")
 
 # Configurar logs para terminal e arquivo
@@ -17,7 +22,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
     handlers=[
-        logging.FileHandler("main.log"),
+        logging.FileHandler("main.log", encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -32,15 +37,10 @@ def carregar_filtros():
 def main():
     logging.info("🔍 Iniciando busca por apostas com EV+ ...")
     api = OddsAPI()
+
+    chat_id = str(os.getenv("TELEGRAM_CHAT_ID"))
     cache = carregar_cache(chat_id)
     novas_apostas = 0
-
-    # Obter o chat_id (como string)
-    chat_id = str(os.getenv("TELEGRAM_CHAT_ID"))
-
-    # Garante entrada para esse usuário no cache
-    if chat_id not in cache:
-        cache[chat_id] = set()
 
     filtros = carregar_filtros()
     ligas_permitidas = filtros.get(chat_id, {}).get("ligas", None)
@@ -74,7 +74,7 @@ def main():
                 continue
 
             alerta_hash = gerar_hash_alerta(evento)
-            if not alerta_hash or alerta_hash in cache[chat_id]:
+            if alerta_hash in cache:
                 logging.info(
                     f"🔁 Alerta já enviado para {evento['home']} vs {evento['away']} [{evento['market_name']}]"
                 )
@@ -85,7 +85,7 @@ def main():
                 alerta_extra = "\n⚠️ <b>Stake sugerida acima de 2u! Reveja o risco antes de apostar.</b>"
 
             enviar_alerta(int(chat_id), evento, ev, stake, stake_sugerida, alerta_extra=alerta_extra)
-            cache[chat_id].add(alerta_hash)
+            cache.add(alerta_hash)
             novas_apostas += 1
             logging.info(
                 f"✅ ALERTA ENVIADO: {evento['home']} vs {evento['away']} [{evento['market_name']}] "

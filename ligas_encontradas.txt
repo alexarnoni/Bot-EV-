@@ -1,81 +1,80 @@
+ATP Challenger Bratislava - R1
 ATP Challenger Lyon - R16
-AVC Challenge Cup - Women
 Algeria - Ligue 1
 Argentina - Liga Nacional
 Argentina - Liga Pro Reserves
+Argentina - Primera B Metropolitana
 Argentina - Primera B Nacional
 Australia - Cup Qualifiers
 Australia - NPL Northern NSW
 Australia - NPL Queensland
 Australia - Queensland Premier League 2
 Brazil - Brasileiro U20
+Brazil - Camp Carioca U19
 Brazil - Serie A
 Brazil - Serie B
 CONCACAF - Gold Cup
+CS2 - CCT European Series 3
 CS2 - United21
+Champions League Asia
+China - Super League
 China - Super League Women
 Colombia - Cup
 Colombia - Liga Women
-Colombia - Primera A
 Colombia - Primera B
-Costa Rica Liga Superior
 Dominican Republic - LNB
 Dota 2 - Esports World Cup: Eastern Europe Qualifier
+Dota 2 - The International WEU Qualifier
 Ecuador - Serie A
 Ecuador - Serie B
 FIFA - Club World Cup
-FIFA - World Cup Qualifiers CONCACAF
-FIFA - World Cup Qualifiers South America
 Finland - Cup
+Finland - Kakkonen Group A
 ITF Men Ceska Lipa - R1
-ITF Men Harmon - R1
-ITF Men Kayseri - R1
 ITF Men Kiseljak - R1
 ITF Men Kursumlijska Banja - R1
 ITF Men Luan - R1
 ITF Men Martos - R1
-ITF Men Messina - R16
-ITF Men Monastir - R1
 ITF Men Monastir 2 - R16
 ITF Men Oradea - R1
 ITF Men San Diego - R1
 ITF Men Santo Domingo - R1
-ITF Men Vaasa - R1
+ITF Men Villeneuve-Loubet - R16
 ITF Men Wichita - R1
 ITF Women Biarritz - R1
+ITF Women Ceska Lipa - R1
 ITF Women Kayseri - R1
-ITF Women Luzhou - R1
+ITF Women Kursumlijska Banja - R1
 ITF Women Madrid - R1
 ITF Women Monastir - R1
 ITF Women Norges-La-Ville - R1
+ITF Women Santo Domingo - R2
 ITF Women Tashkent - R1
 Iceland - Cup Women
-International - Friendlies
+International Friendlies Women
 Ireland - Premier
+Israel - National League
 Japan - Cup
-Korea Republic - K4 League
+Korea Republic - K League 1
 League of Legends - EMEA Masters
 League of Legends - LCK
+Lebanon - Lebanese Basketball League
 Lithuania - Lietuvos Krepsinio Lyga
 MLB
-Mexican League
-Mexico - CIBACOPA
+Mongolia - Premier League
 NBA
 NFL
 Nations League
 Norway - Cup Women
 Norway - Eliteserien
 Peru - Liga 1
-Philippines - PBA Philippines Cup
-Spain - ACB
 Spain - Segunda Division
 Sweden - Allsvenskan
-Triple A Minor League
-UEFA - U21 European Championship
 USA - MLS Next Pro League
 USA - Major League Soccer
+USA - National Womens Soccer League
+USA - USL League One
 Valorant - Challengers Brazil
 Venezuela - Cup
 WNBA
 WTA Hertogenbosch - R16
-WTA London - R16
