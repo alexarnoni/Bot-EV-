@@ -1,24 +1,38 @@
 import os
 import json
+import logging
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from scanner import scan_apostas
 
-print("🔊 bot_listener.py iniciado.")
+# Configurar logging (arquivo + terminal)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    handlers=[
+        logging.FileHandler("listener.log", encoding="utf-8"),
+        logging.StreamHandler()
+    ]
+)
+logging.info("🔊 bot_listener.py iniciado.")
 
+# Carregar variáveis de ambiente
 load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
-filtros_por_chat = {}
+# ----- Carregar ou iniciar filtros salvos -----
+try:
+    with open("filtros_por_chat.json", "r", encoding="utf-8") as f:
+        filtros_por_chat = json.load(f)
+except Exception:
+    filtros_por_chat = {}
+    logging.warning("⚠️ Nenhum filtro salvo encontrado. Iniciando com dicionário vazio.")
 
 # ----- Função para salvar filtros em JSON -----
 def salvar_filtros():
     with open("filtros_por_chat.json", "w", encoding="utf-8") as f:
         json.dump(filtros_por_chat, f, indent=2, ensure_ascii=False)
-
-# Dicionário para salvar o filtro do chat
-filtros_por_chat = {}
 
 # ----- LISTAS DE LIGAS -----
 
@@ -179,11 +193,6 @@ ligas_internacionais = [
     # Adicione outras copas relevantes!
 ]
 
-# ----- Função para salvar filtros em JSON -----
-def salvar_filtros():
-    with open("filtros_por_chat.json", "w") as f:
-        json.dump(filtros_por_chat, f)
-
 # ----- HANDLERS DE COMANDO -----
 # ----- Comandos por região -----
 async def set_brasil(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -243,7 +252,7 @@ async def ver_filtros(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(msg, parse_mode="HTML")
 
-# ----- Comando para definir esportes -----
+# ----- Esportes -----
 ESPORTES_VALIDOS = {
     "futebol": "Football",
     "tenis": "Tennis",
@@ -265,23 +274,15 @@ async def set_esportes(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❗ Use: /esportes futebol tenis basquete")
         return
 
-    esportes = []
-    for arg in argumentos:
-        nome = arg.lower()
-        if nome in ESPORTES_VALIDOS:
-            esportes.append(ESPORTES_VALIDOS[nome])
+    esportes = [ESPORTES_VALIDOS[arg.lower()] for arg in argumentos if arg.lower() in ESPORTES_VALIDOS]
 
     if not esportes:
         await update.message.reply_text("⚠️ Nenhum esporte reconhecido.")
         return
 
-    if chat_id not in filtros_por_chat or not isinstance(filtros_por_chat[chat_id], dict):
-        filtros_por_chat[chat_id] = {}
-
-    filtros_por_chat[chat_id]["esportes"] = esportes
+    filtros_por_chat.setdefault(chat_id, {})["esportes"] = esportes
     salvar_filtros()
-    esportes_formatados = ", ".join(esportes)
-    await update.message.reply_text(f"✅ Esportes configurados: {esportes_formatados}")
+    await update.message.reply_text(f"✅ Esportes configurados: {', '.join(esportes)}")
 
 # ----- Ajuda e Scan -----
 async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -296,7 +297,9 @@ async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/feminino - Filtro: Futebol Feminino\n"
         "/internacionais - Filtro: Copas, Mundial, Amistosos\n"
         "/todos - Remove filtro (todas as ligas)\n"
-        "/esportes - Define esportes permitidos (ex: /esportes futebol tenis)"
+        "/esportes - Define esportes permitidos (ex: /esportes futebol tenis)\n"
+        "/scan - Executa busca manual\n"
+        "/filtros - Ver filtros atuais"
     )
     await update.message.reply_text(msg)
 
