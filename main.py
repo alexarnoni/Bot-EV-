@@ -12,8 +12,15 @@ from datetime import datetime, timezone
 
 print("⚙️ main.py iniciado.")
 
-# Configurar logs
-logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
+# Configurar logs para terminal e arquivo
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    handlers=[
+        logging.FileHandler("main.log"),
+        logging.StreamHandler()
+    ]
+)
 
 def carregar_filtros():
     try:
@@ -21,7 +28,7 @@ def carregar_filtros():
             return json.load(f)
     except Exception:
         return {}
-    
+
 def main():
     logging.info("🔍 Iniciando busca por apostas com EV+ ...")
     api = OddsAPI()
@@ -35,7 +42,7 @@ def main():
     esportes_permitidos = filtros.get(chat_id, {}).get("esportes", None)
 
     eventos = api.get_eventos_geral()
-    
+
     if not eventos:
         logging.warning("Nenhum evento encontrado.")
         return
@@ -44,13 +51,11 @@ def main():
 
     for evento in eventos:
         try:
-            # Filtro de Liga Dinâmico
             if esportes_permitidos and evento.get("sport") not in esportes_permitidos:
                 continue
             if ligas_permitidas and evento.get("league") not in ligas_permitidas:
                 continue
 
-            # Checagens de odds válidas
             odd_bet365 = evento['bet365_odds']
             if odd_bet365 < 1.01 or odd_bet365 > 100:
                 logging.info(f"⛔ Odd inválida ({odd_bet365}) para {evento['market_name']}")
@@ -59,7 +64,6 @@ def main():
             ev = evento['ev']
             stake, stake_sugerida = definir_stake(ev, odd_bet365)
 
-            # Só envia se stake >= 0.1u e EV > 0.05
             if ev <= 0.05 or stake < 0.1:
                 logging.info(
                     f"❌ Descartado {evento['home']} vs {evento['away']} [{evento['market_name']}] "
@@ -74,7 +78,6 @@ def main():
                 )
                 continue
 
-            # Adiciona aviso de stake sugerida > 2u
             alerta_extra = ""
             if stake_sugerida > 2.0:
                 alerta_extra = "\n⚠️ <b>Stake sugerida acima de 2u! Reveja o risco antes de apostar.</b>"
@@ -97,7 +100,6 @@ def main():
 
 def run_loop():
     main()  # roda a primeira vez assim que iniciar
-    # agenda para rodar a cada 1 hora
     schedule.every(1).hours.do(main)
     print("⏰ Bot agendado para rodar a cada 1 hora.")
     while True:
@@ -106,4 +108,3 @@ def run_loop():
 
 if __name__ == "__main__":
     run_loop()
-    # main() # Se quiser rodar só uma vez e sair, use só
