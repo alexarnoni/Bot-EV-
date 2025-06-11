@@ -7,7 +7,7 @@ from bot_core import calcular_odd_minima, obter_probabilidade_real
 load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
 
 EMOJIS_POR_ESPORTE = {
     "football": "⚽",
@@ -124,7 +124,7 @@ def extrair_odd(evento):
             return evento[campo]
     return evento.get("bet365_odds")
 
-def enviar_alerta(evento, ev, stake=None, stake_sugerida=None, alerta_extra=""):
+def enviar_alerta(chat_id, evento, ev, stake=None, stake_sugerida=None, alerta_extra=""):
     esporte = evento.get("sport", "").lower()
     emoji_esporte = EMOJIS_POR_ESPORTE.get(esporte, "🏅")
 
@@ -170,6 +170,6 @@ def enviar_alerta(evento, ev, stake=None, stake_sugerida=None, alerta_extra=""):
 
     url = (
         f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-        f"?chat_id={TELEGRAM_CHAT_ID}&text={requests.utils.quote(msg)}&parse_mode=HTML"
+        f"?chat_id={chat_id}&text={requests.utils.quote(msg)}&parse_mode=HTML"
     )
     requests.get(url)

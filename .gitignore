@@ -10,6 +10,7 @@ venv_listener/
 .filtros_por_chat.json
 ligas_api.txt
 ligas_total_api.txt
+ligas_encontradas.txt
 # VSCode/IDE
 .vscode/
 .idea/

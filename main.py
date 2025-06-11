@@ -32,22 +32,24 @@ def carregar_filtros():
 def main():
     logging.info("🔍 Iniciando busca por apostas com EV+ ...")
     api = OddsAPI()
-    cache = carregar_cache()
+    cache = carregar_cache(chat_id)
     novas_apostas = 0
 
-    # Carregar filtro do chat
+    # Obter o chat_id (como string)
     chat_id = str(os.getenv("TELEGRAM_CHAT_ID"))
+
+    # Garante entrada para esse usuário no cache
+    if chat_id not in cache:
+        cache[chat_id] = set()
+
     filtros = carregar_filtros()
     ligas_permitidas = filtros.get(chat_id, {}).get("ligas", None)
     esportes_permitidos = filtros.get(chat_id, {}).get("esportes", None)
 
     eventos = api.get_eventos_geral()
-
     if not eventos:
         logging.warning("Nenhum evento encontrado.")
         return
-
-    chat_id = int(os.getenv("TELEGRAM_CHAT_ID"))
 
     for evento in eventos:
         try:
@@ -72,7 +74,7 @@ def main():
                 continue
 
             alerta_hash = gerar_hash_alerta(evento)
-            if not alerta_hash or alerta_hash in cache:
+            if not alerta_hash or alerta_hash in cache[chat_id]:
                 logging.info(
                     f"🔁 Alerta já enviado para {evento['home']} vs {evento['away']} [{evento['market_name']}]"
                 )
@@ -82,8 +84,8 @@ def main():
             if stake_sugerida > 2.0:
                 alerta_extra = "\n⚠️ <b>Stake sugerida acima de 2u! Reveja o risco antes de apostar.</b>"
 
-            enviar_alerta(evento, ev, stake, stake_sugerida, alerta_extra=alerta_extra)
-            cache.add(alerta_hash)
+            enviar_alerta(int(chat_id), evento, ev, stake, stake_sugerida, alerta_extra=alerta_extra)
+            cache[chat_id].add(alerta_hash)
             novas_apostas += 1
             logging.info(
                 f"✅ ALERTA ENVIADO: {evento['home']} vs {evento['away']} [{evento['market_name']}] "
@@ -93,7 +95,7 @@ def main():
             logging.error(f"Erro ao processar evento: {e}")
             continue
 
-    salvar_cache(cache)
+    salvar_cache(cache, chat_id)
     salvar_ligas_api_completo(eventos)
     logging.info(f"🏁 Busca finalizada. {novas_apostas} alertas enviados.")
     logging.info(f"⏱️ main.py executado em {datetime.now(timezone.utc).isoformat()}")
