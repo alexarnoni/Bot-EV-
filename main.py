@@ -8,6 +8,9 @@ import os
 import json
 import schedule
 import time
+from datetime import datetime, timezone
+
+print("⚙️ main.py iniciado.")
 
 # Configurar logs
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -90,10 +93,11 @@ def main():
     salvar_cache(cache)
     salvar_ligas_api_completo(eventos)
     logging.info(f"🏁 Busca finalizada. {novas_apostas} alertas enviados.")
+    logging.info(f"⏱️ main.py executado em {datetime.now(timezone.utc).isoformat()}")
 
 def run_loop():
     main()  # roda a primeira vez assim que iniciar
-    # agenda para rodar a cada 5 minutos
+    # agenda para rodar a cada 1 hora
     schedule.every(1).hours.do(main)
     print("⏰ Bot agendado para rodar a cada 1 hora.")
     while True:

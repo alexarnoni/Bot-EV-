@@ -5,6 +5,8 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from scanner import scan_apostas
 
+print("🔊 bot_listener.py iniciado.")
+
 load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
