@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from bot_core import calcular_odd_minima, obter_probabilidade_real
 from historico import registrar_alerta
 from formatadores import montar_nome_mercado, extrair_odd, formatar_data_br
+from usuarios import remover_usuario
 
 load_dotenv()
 
@@ -183,7 +184,9 @@ def enviar_alerta(chat_id, evento, ev, stake=None, stake_sugerida=None, alerta_e
     try:
         response = requests.get(url)
         if response.status_code == 403:
-            print(f"⚠️ Usuário {chat_id} bloqueou o bot ou saiu.")
+            print(f"⚠️ Usuário {chat_id} bloqueou o bot. Iniciando remoção automática.")
+            from usuarios import remover_usuario
+            remover_usuario(chat_id)
         else:
             # Apenas registra se o alerta foi realmente enviado
             from historico import registrar_alerta

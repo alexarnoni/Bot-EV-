@@ -25,3 +25,12 @@ def salvar_cache(cache, chat_id):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "wb") as f:
         pickle.dump(cache, f)
+
+def excluir_cache(chat_id):
+    try:
+        caminho = get_cache_path(chat_id)  # usa o mesmo padrão do restante
+        if os.path.exists(caminho):
+            os.remove(caminho)
+    except Exception as e:
+        print(f"Erro ao excluir cache de {chat_id}: {e}")
+
