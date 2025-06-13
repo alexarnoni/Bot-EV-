@@ -210,3 +210,7 @@
 2025-06-11 00:45:20,913 | INFO | ❌ Descartado AIK vs IFK Goteborg [ML] | EV: 1.86% | Stake: 0.00u
 2025-06-11 00:45:20,914 | INFO | 🏁 Busca finalizada. 0 alertas enviados.
 2025-06-11 00:45:20,914 | INFO | ⏱️ main.py executado em 2025-06-11T03:45:20.914563+00:00
+2025-06-12 23:25:52,975 | INFO | 🔍 Iniciando busca por apostas com EV+ ...
+2025-06-12 23:26:34,119 | INFO | ✅ [350780046] 54 alertas enviados.
+2025-06-12 23:26:34,828 | INFO | 🏁 Busca finalizada. Total: 54 alertas enviados.
+2025-06-12 23:26:34,828 | INFO | ⏱️ main.py executado em 2025-06-13T02:26:34.828683+00:00

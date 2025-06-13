@@ -51,6 +51,11 @@ def scan_apostas(chat_id=None):
             if ligas_permitidas and evento.get("league") not in ligas_permitidas:
                 continue
 
+            # 🚫 Ignorar mercados do 1º tempo
+            market_name = evento.get("market_name", "").lower()
+            if any(x in market_name for x in ["1st half", "ht", "half time"]):
+                continue
+
             odd_bet365 = evento['bet365_odds']
             if odd_bet365 < 1.01 or odd_bet365 > 100:
                 continue
@@ -76,6 +81,7 @@ def scan_apostas(chat_id=None):
         except Exception as e:
             logging.error(f"Erro ao processar evento: {e}")
             continue
+
 
     salvar_cache(cache, chat_id)
     salvar_ligas_api_completo(eventos_alertados)

@@ -38,6 +38,7 @@ def salvar_filtros():
 ligas_brasil = [
     "Brazil - Serie A",
     "Brazil - Serie B",
+    "Brazil - Serie C",
     "Brazil - Serie D",
     "Brazil - Paulista Serie B",
     "Brazil - Baiano 2",
@@ -248,14 +249,93 @@ async def fallback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("❓ Comando não reconhecido. Digite /ajuda para ver as opções disponíveis.")
 
 # ----- Filtros por região -----
-async def set_brasil(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_brasil, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: 🇧🇷 Brasil.")
-async def set_americasul(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_america_sul, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: América do Sul.")
-async def set_europa(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_europa, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: Europa.")
-async def set_escandinavo(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_escandinavo, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: Escandinávia.")
-async def set_norte_centro(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_norte_centro, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: América do Norte/Centro.")
-async def set_asia(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_asia, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: Ásia/Oceania.")
-async def set_feminino(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_femininas, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: Futebol Feminino.")
-async def set_internacionais(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": ligas_internacionais, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro ajustado para: Copas e Amistosos.")
+async def set_brasil(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_brasil)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Ligas do Brasil adicionadas ao seu filtro.")
+async def set_americasul(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_america_sul)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Ligas da América do Sul adicionadas ao seu filtro.")
+
+async def set_europa(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_europa)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Ligas da Europa adicionadas ao seu filtro.")
+
+async def set_escandinavo(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_escandinavo)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Ligas escandinavas adicionadas ao seu filtro.")
+
+async def set_norte_centro(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_norte_centro)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Ligas da América do Norte/Centro adicionadas ao seu filtro.")
+
+async def set_asia(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_asia)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Ligas da Ásia/Oceania adicionadas ao seu filtro.")
+
+async def set_feminino(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_femininas)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Ligas de Futebol Feminino adicionadas ao seu filtro.")
+
+async def set_internacionais(update, context):
+    chat_id = str(update.effective_chat.id)
+    filtros_por_chat.setdefault(chat_id, {"ligas": [], "esportes": None})
+
+    ligas_atuais = set(filtros_por_chat[chat_id].get("ligas") or [])
+    ligas_atuais.update(ligas_internacionais)
+    filtros_por_chat[chat_id]["ligas"] = sorted(ligas_atuais)
+
+    salvar_filtros()
+    await update.message.reply_text("✅ Competições internacionais adicionadas ao seu filtro.")
+
 async def set_todos(update, context): filtros_por_chat[str(update.effective_chat.id)] = {"ligas": None, "esportes": None}; salvar_filtros(); await update.message.reply_text("Filtro removido. Você receberá alertas de todas as ligas.")
 
 # ----- Ver filtros -----
@@ -298,7 +378,7 @@ async def ajuda(update, context):
     msg = (
         "📚 Comandos disponíveis:\n\n"
         "/brasil /americasul /europa /escandinavo /nortecentro /asia /feminino /internacionais\n"
-        "/todos - Remove filtros\n"
+        "/todos - Remove filtros e libera alertas de todas as regiões e esportes\n"
         "/esportes futebol basquete etc\n"
         "/filtros - Ver filtros atuais\n"
         "/scan - Rodar busca manual\n"

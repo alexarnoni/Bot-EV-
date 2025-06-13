@@ -1,80 +1,87 @@
-ATP Challenger Bratislava - R1
-ATP Challenger Lyon - R16
-Algeria - Ligue 1
-Argentina - Liga Nacional
-Argentina - Liga Pro Reserves
-Argentina - Primera B Metropolitana
+ATP Challenger Bratislava - QF
+ATP Challenger Santa Fe - QF
+AVC Challenge Cup - Women
 Argentina - Primera B Nacional
-Australia - Cup Qualifiers
+Australia - NBL1
+Australia - NBL1 Women
 Australia - NPL Northern NSW
 Australia - NPL Queensland
-Australia - Queensland Premier League 2
-Brazil - Brasileiro U20
-Brazil - Camp Carioca U19
-Brazil - Serie A
+Australia - NPL South Australia
+Australia - NPL Tasmania
+Australia - NPL Victoria
+Australia - NPL Victoria Women
+Australia - NPL Western Australia
+Australia - Queensland Premier League
+Australia - Queensland Premier League Women
+Australia - Tasmania Super League Women
+Australia - Victoria Premier League 1
+Australia - Victoria Premier League 2
+Bolivia - Primera Division
+Boxing Matches
+Brazil - Brasileiro Women
+Brazil - LBF Women
 Brazil - Serie B
 CONCACAF - Gold Cup
-CS2 - CCT European Series 3
-CS2 - United21
-Champions League Asia
+Chile - Primera Division
 China - Super League
-China - Super League Women
-Colombia - Cup
-Colombia - Liga Women
-Colombia - Primera B
+Denmark - 2nd Division
 Dominican Republic - LNB
-Dota 2 - Esports World Cup: Eastern Europe Qualifier
 Dota 2 - The International WEU Qualifier
 Ecuador - Serie A
-Ecuador - Serie B
+Europe - Champions League
 FIFA - Club World Cup
-Finland - Cup
-Finland - Kakkonen Group A
-ITF Men Ceska Lipa - R1
-ITF Men Kiseljak - R1
-ITF Men Kursumlijska Banja - R1
-ITF Men Luan - R1
-ITF Men Martos - R1
-ITF Men Monastir 2 - R16
-ITF Men Oradea - R1
-ITF Men San Diego - R1
-ITF Men Santo Domingo - R1
-ITF Men Villeneuve-Loubet - R16
-ITF Men Wichita - R1
-ITF Women Biarritz - R1
-ITF Women Ceska Lipa - R1
-ITF Women Kayseri - R1
-ITF Women Kursumlijska Banja - R1
-ITF Women Madrid - R1
-ITF Women Monastir - R1
-ITF Women Norges-La-Ville - R1
-ITF Women Santo Domingo - R2
-ITF Women Tashkent - R1
-Iceland - Cup Women
-International Friendlies Women
+Finland - Kakkonen Group B
+Finland - Kakkonen Group C
+Finland - Veikkausliiga
+Finland - Ykkosliiga
+ITF Men Kursumlijska Banja - QF
+ITF Men Martos - QF
+ITF Men Messina - SF
+ITF Men Santo Domingo - QF
+ITF Men Vaasa - QF
+ITF Men Varnamo - QF
+ITF Men Villeneuve-Loubet - SF
+ITF Men Wichita - QF
+ITF Women Biarritz - QF
+ITF Women Gdansk - QF
+ITF Women Monastir - QF
+ITF Women Norges-La-Ville - QF
+ITF Women Tashkent - QF
+Iceland - 1. Deild
+Iceland - Premier League
+Ireland - Division 1
 Ireland - Premier
-Israel - National League
-Japan - Cup
+Italy - Serie A
+Italy - Serie A2
+Italy - Serie B
+Japan - J League
+Japan - J2 League
+Japan - J3 League
 Korea Republic - K League 1
+Korea Republic - K League 2
+Korea Republic - K3 League
+Latvia - Virsliga
 League of Legends - EMEA Masters
-League of Legends - LCK
 Lebanon - Lebanese Basketball League
+Lebanon - Premier League
 Lithuania - Lietuvos Krepsinio Lyga
-MLB
-Mongolia - Premier League
 NBA
 NFL
-Nations League
-Norway - Cup Women
+Nippon Professional Baseball
+Norway - 1st Division
+Norway - 2nd Division
 Norway - Eliteserien
 Peru - Liga 1
-Spain - Segunda Division
+Philippines - PBA Philippines Cup
+Portugal - Liga Portuguesa de Basquetebol
+Rainbow Six - South America League
+Romania - Division A
+Spain - ACB
 Sweden - Allsvenskan
-USA - MLS Next Pro League
+Sweden - Superettan
+UEFA - U19 European Championship
 USA - Major League Soccer
 USA - National Womens Soccer League
-USA - USL League One
+Uruguay - Primera Division
 Valorant - Challengers Brazil
-Venezuela - Cup
-WNBA
-WTA Hertogenbosch - R16
+Valorant - Champions Tour: Masters Toronto

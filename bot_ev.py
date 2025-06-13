@@ -3,11 +3,12 @@ import requests
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from bot_core import calcular_odd_minima, obter_probabilidade_real
+from historico import registrar_alerta
+from formatadores import montar_nome_mercado, extrair_odd, formatar_data_br
 
 load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-
 
 EMOJIS_POR_ESPORTE = {
     "football": "⚽",
@@ -44,8 +45,6 @@ TRADUCAO_MERCADOS = {
     "corner": "Cantos",
     "corner spread": "Handicap de Cantos",
     "corner totals": "Total de Cantos",
-
-    # Novos mercados multi-esporte:
     "totals": "Total de Pontos",
     "match winner": "Vencedor da Partida",
     "set winner": "Vencedor do Set",
@@ -69,7 +68,7 @@ TRADUCAO_LADOS = {
 def formatar_data_br(dt_utc_str):
     try:
         dt_utc = datetime.strptime(dt_utc_str.replace("Z", ""), "%Y-%m-%dT%H:%M:%S")
-        dt_br = dt_utc - timedelta(hours=3)  # UTC-3 (Brasília)
+        dt_br = dt_utc - timedelta(hours=3)
         return dt_br.strftime("%d/%m/%Y %H:%M")
     except Exception:
         return dt_utc_str
@@ -83,19 +82,28 @@ def extrair_linha_mercado(evento):
         return " / ".join([f"{float(x):g}" for x in total])
     if hdp is not None:
         try:
-            return f"{float(hdp):+g}"
+            valor = float(hdp)
+            return f"{valor:+g}" if valor != 0 else "0.0"
         except Exception:
             return str(hdp)
     if total is not None:
         try:
-            return f"{float(total):g}"
+            valor = float(total)
+            return f"{valor:g}" if valor != 0 else "0.0"
         except Exception:
             return str(total)
     return ""
 
 def montar_nome_mercado(evento):
     nome_mercado_raw = evento.get("market_name") or evento.get("market_type") or ""
-    nome_mercado_pt = TRADUCAO_MERCADOS.get(nome_mercado_raw.lower(), nome_mercado_raw.title())
+    nome_raw_lower = nome_mercado_raw.lower()
+
+    # Substituir "totals" por "Mais de Gols" se for futebol
+    if nome_raw_lower == "totals" and evento.get("sport", "").lower() == "football":
+        nome_mercado_pt = "Mais de Gols"
+    else:
+        nome_mercado_pt = TRADUCAO_MERCADOS.get(nome_raw_lower, nome_mercado_raw.title())
+
     linha = extrair_linha_mercado(evento)
     lado = evento.get("bet_side")
     lado_pt = TRADUCAO_LADOS.get(str(lado).lower(), lado.title() if lado else "")
@@ -142,7 +150,6 @@ def enviar_alerta(chat_id, evento, ev, stake=None, stake_sugerida=None, alerta_e
 
     msg = ""
 
-    # Esporte no topo se ≠ futebol
     if esporte != "football":
         msg += f"{emoji_esporte} <b>{esporte.title()}</b>\n"
 
@@ -172,4 +179,14 @@ def enviar_alerta(chat_id, evento, ev, stake=None, stake_sugerida=None, alerta_e
         f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         f"?chat_id={chat_id}&text={requests.utils.quote(msg)}&parse_mode=HTML"
     )
-    requests.get(url)
+
+    try:
+        response = requests.get(url)
+        if response.status_code == 403:
+            print(f"⚠️ Usuário {chat_id} bloqueou o bot ou saiu.")
+        else:
+            # Apenas registra se o alerta foi realmente enviado
+            from historico import registrar_alerta
+            registrar_alerta(chat_id, evento, ev, stake, stake_sugerida)
+    except Exception as e:
+        print(f"❌ Erro ao enviar alerta para {chat_id}: {e}")

@@ -5,6 +5,7 @@ import os
 import json
 import schedule
 import time
+import requests
 from datetime import datetime, timezone
 from api_client import OddsAPI
 from cache import carregar_cache, salvar_cache, gerar_hash_alerta
@@ -61,6 +62,10 @@ def main():
                 if ligas_permitidas and evento.get("league") not in ligas_permitidas:
                     continue
 
+                market_name = evento.get("market_name", "").lower()
+                if any(x in market_name for x in ["1st half", "ht", "half time"]):
+                    continue
+
                 odd_bet365 = evento['bet365_odds']
                 if odd_bet365 < 1.01 or odd_bet365 > 100:
                     continue
@@ -90,14 +95,29 @@ def main():
         logging.info(f"✅ [{chat_id}] {novas_apostas} alertas enviados.")
         total_alertas += novas_apostas
 
+        # Enviar mensagem no Telegram ao final do scan
+        try:
+            if novas_apostas > 0:
+                texto = f"✅ Scan automático finalizado.\n{novas_apostas} novas apostas com EV+ encontradas!"
+            else:
+                texto = "🔎 Scan automático finalizado. Nenhuma nova aposta com EV+."
+
+            url = (
+                f"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/sendMessage"
+                f"?chat_id={chat_id}&text={requests.utils.quote(texto)}"
+            )
+            requests.get(url)
+        except Exception as e:
+            logging.warning(f"❌ Não foi possível enviar mensagem de finalização para {chat_id}: {e}")
+
     salvar_ligas_api_completo(eventos)
     logging.info(f"🏁 Busca finalizada. Total: {total_alertas} alertas enviados.")
     logging.info(f"⏱️ main.py executado em {datetime.now(timezone.utc).isoformat()}")
 
 def run_loop():
     main()
-    schedule.every(1).hours.do(main)
-    print("⏰ Bot agendado para rodar a cada 1 hora.")
+    schedule.every().hour.at(":00").do(main)
+    print("⏰ Bot agendado para rodar a cada hora cheia.")
     while True:
         schedule.run_pending()
         time.sleep(1)

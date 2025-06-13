@@ -21,3 +21,5 @@ Thumbs.db
 *.pkl
 __pycache__/
 *.pyc
+
+bot_core_kelly.py
